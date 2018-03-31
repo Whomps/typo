@@ -30,7 +30,7 @@ describe Admin::CategoriesController do
     it 'should create a new category' do
       post :edit, :category => { :name => "Test Category", :keywords => "test keywords",
         :permalink => "this_is_some_link", :description => "A new testing instance" }
-      assert_response :redirect, action => "index"
+      assert_response :redirect, :action => 'index'
       assigns(:category).should_not be_nil
       assert assigns(:category).valid?
       assigns(:categories).should_not be_nil
